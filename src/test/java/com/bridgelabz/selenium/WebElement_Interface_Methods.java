@@ -13,23 +13,24 @@ public class WebElement_Interface_Methods {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
-		String expectedError = "The email address or mobile number you entered isn't connected to an account. Find your account and log in.";
+		//String expectedError = "The email address or mobile number you entered isn't connected to an account. Find your account and log in.";
+		String expectedError="email or mobile number entered is not connected to an account.find your account and log in";
 		Thread.sleep(3000);
-		driver.findElement(By.id("email")).sendKeys("asdfghjkl");
+		driver.findElement(By.id("email")).sendKeys("sinkykumariverma@gmail.com");
 		Thread.sleep(2000);
 		driver.findElement(By.name("pass")).sendKeys("asdf");
 		Thread.sleep(2000);
 		WebElement element = driver.findElement(By.name("pass"));
 		element.clear();
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		driver.findElement(By.name("pass")).sendKeys("asdf");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).submit();
 		Thread.sleep(2000);
 		
-		WebElement errorMsg = driver.findElement(By.linkText("Find your account and log in."));
+		WebElement errorMsg = driver.findElement(By.linkText("find your account and log in."));
 		String actualError = errorMsg.getText();
-		System.out.println("Error msg is:" + actualError);
+		System.out.println("Error msg is"+ actualError);
 		driver.close();
 
 	}
