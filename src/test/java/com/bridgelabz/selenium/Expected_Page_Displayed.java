@@ -56,7 +56,7 @@ public class Expected_Page_Displayed {
 		Thread.sleep(2000);
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
-		WebElement logoutBtn = driver.findElement(By.xpath("//a[.='Logout']"));
+		WebElement logoutBtn = driver.findElement(By.xpath("//button[contains(text(),'Log')]"));
 		if (logoutBtn.isDisplayed()) {
 		System.out.println("Home page is displayed");
 		} else{

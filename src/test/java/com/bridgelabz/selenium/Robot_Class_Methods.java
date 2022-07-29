@@ -7,13 +7,17 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class Robot_Class_Methods {
 	@Test
 	public void mouseAnsKeyBoardOperator() throws InterruptedException, AWTException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+//		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Admin\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+
 		driver.get("https://www.facebook.com/");
 		  Thread.sleep(4000);
 		  
