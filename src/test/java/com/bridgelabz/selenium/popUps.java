@@ -1,10 +1,12 @@
 package com.bridgelabz.selenium;
 
 import java.io.IOException;
+import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
@@ -15,13 +17,14 @@ public class popUps {
 	@BeforeTest
 	public void launchBrowser()
 	{
-//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
-//          driver = new ChromeDriver();
-		System.setProperty("webdriver.gecko.driver","C:\\Users\\Admin\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+          driver = new ChromeDriver();
+//		System.setProperty("webdriver.gecko.driver","C:\\Users\\Admin\\Downloads\\geckodriver-v0.31.0-win64\\geckodriver.exe");
+//		driver = new FirefoxDriver();
 	}
 	@Test
 	public void simpleAlertPopup() throws InterruptedException{
+	
 		    driver.get("https://demoqa.com/alerts");
 		    driver.manage().window().maximize();
 		    Thread.sleep(2000);
@@ -44,22 +47,7 @@ public class popUps {
 		    confirmationAlert.accept();
 		    
 	}
-//	@Test
-//	public void PromptPopUp() throws InterruptedException 
-//	{
-//	 driver.get("https://demoqa.com/alerts");
-//    driver.manage().window().maximize();
-//    Thread.sleep(2000);
-//    driver.findElement(By.id("promptButton")).click();
-//    Thread.sleep(2000);
-//    Alert promptAlert=driver.switchTo().alert();
-//    Thread.sleep(2000);
-//    promptAlert.sendKeys("Sinky");
-//    Thread.sleep(2000);
-//    promptAlert.accept();
-//    
 
-//}
 	@Test
 	public void prompt_PopUp() throws InterruptedException {
 		

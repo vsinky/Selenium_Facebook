@@ -7,44 +7,71 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class Frame_Test {
-@Test
-public void Frame() throws InterruptedException {
-	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
-	WebDriver driver = new ChromeDriver();
-	driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
-	  Thread.sleep(4000);
-	  driver.manage().window().maximize();
-	    Thread.sleep(2000);
-	  //using index of the frame - [ int value] [ index of frames starts with zero]
-	    driver.findElement(By.id("t1")).sendKeys("sinky");
-	    driver.switchTo().frame(0);
-	    driver.findElement(By.id("t2")).sendKeys("sinky");
-	    Thread.sleep(2000);
-	    driver.switchTo().defaultContent();
-	    Thread.sleep(2000);
+	@Test
+	public void frames_usingIndex () throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
 
-	    //using id attribute of the frame -string
-	    driver.findElement(By.id("t1")).sendKeys("verma");
-	    driver.switchTo().frame("f1");
-        driver.findElement(By.id("t2")).sendKeys("verma");
-	    Thread.sleep(2000);
-	    driver.switchTo().defaultContent();
-	    Thread.sleep(2000);
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
 
+		//using index of the frame - [ int value] [ index of frames starts with zero]
+		driver.switchTo().frame(0);
+		driver.findElement(By.id("t1")).sendKeys("Sinky");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("t2")).sendKeys("Verma");	
+	}
+	@Test
+	public void frames_usingId () throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
 
-	    //using name attribute of the frame -string
-	    driver.switchTo().frame("n1");
-	    driver.findElement(By.id("t1")).sendKeys("c");
-	    driver.switchTo().defaultContent();
-	    driver.findElement(By.id("t2")).sendKeys("c");
-	    //using address of the frame -webelement
-	    WebElement f = driver.findElement(By.className("c1"));
-	    driver.switchTo().frame(f);
-	    driver.findElement(By.id("t1")).sendKeys("d");
-	    driver.switchTo().defaultContent();
-	    driver.findElement(By.id("t2")).sendKeys("d");
-	    driver.close();
-	    }
-	    
+		//using id attribute of the frame -string
+		driver.switchTo().frame("f1");
+		driver.findElement(By.id("t1")).sendKeys("Sinky");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("t2")).sendKeys("Verma");
+	}
+	@Test
+	public void frames_usingName () throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
+
+		//using name attribute of the frame -string
+		driver.switchTo().frame("n1");
+		driver.findElement(By.id("t1")).sendKeys("Sinky");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("t2")).sendKeys("Verma");
+	}
+	@Test
+	public void frames_usingAddressFrame () throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
+
+		//using address of the frame -webelement
+		WebElement f = driver.findElement(By.className("c1"));
+		driver.switchTo().frame(f);
+		driver.findElement(By.id("t1")).sendKeys("Sinky");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("t2")).sendKeys("Verma");
+		//driver.close();
+	}
+	@Test
+	public void frames_ThreeTextField() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///C:/Users/Admin/OneDrive/Desktop/frame2.html");
+
+		// frames handling for three text field
+		//using ID attribute
+		driver.switchTo().frame("f1");
+		driver.findElement(By.id("t1")).sendKeys("Sinky");
+		driver.switchTo().defaultContent();
+		driver.findElement(By.id("t2")).sendKeys("A");
+		driver.findElement(By.id("t3")).sendKeys("Verma");
+
+	}
 }
-
