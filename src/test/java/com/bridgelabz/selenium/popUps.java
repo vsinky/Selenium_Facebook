@@ -100,6 +100,7 @@ public class popUps {
 		Runtime.getRuntime().exec("C:\\Users\\Admin\\OneDrive\\Documents\\upload.exe");
 	}
 
+
 	
 	@Test
 	public void FileDownloadInChromeBrowser(){
@@ -112,8 +113,6 @@ public class popUps {
 		cap.setCapability(ChromeOptions.CAPABILITY, options);
 		 driver = new ChromeDriver(cap);
 		driver.get("http://www.seleniumhq.org/download/");
-		//Thread.sleep(2000);
-		//String xp = "//td[.='Java']/following-sibling::td/a[.='Download']";
 		driver.findElement(By.linkText("4.3.0")).click();
 		}
 

@@ -9,8 +9,7 @@ public class Facebook_Login {
 
 	@Test
 	public void login() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		Thread.sleep(4000);
 		driver.get("https://www.facebook.com/");
