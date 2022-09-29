@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class FindElement {
+public class HandlingWebTable {
 	public static WebDriver driver;
 
 	@BeforeTest
